@@ -1,0 +1,16 @@
+function repeatStringNumTimes (string, number){
+let stringRepeat = "";
+const emptyString = "";
+  if(number <= 0){
+    return emptyString 
+  }
+
+for (let i = 0; i < number; ++i){ 
+  
+    stringRepeat += string;
+}
+
+
+return stringRepeat
+}
+console.log(repeatStringNumTimes ("@", 9));
