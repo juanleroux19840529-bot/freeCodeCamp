@@ -1,0 +1,80 @@
+** start of index.html **
+
+<div class = "container"> 
+<div class = "header">
+  <h1 id = "title">Olive Garden Guest House Survey Form</h1>
+  <p id = "description">Thank you for taking the time to help us improve the platform</p>
+</div>
+  <div class = "survey_Form_Constainer">
+    <form id = "survey-form">
+      <h2> Customer Satisfaction</h2>
+      <label for = "name" id = "name-label"> Name: </label>
+      <input id = "name" type = "text" placeholder = "Enter your name" required></input>
+      <p>
+      <label for = "email" id = "email-label">Email:</label>
+      <input type = "email" id = "email" placeholder = "Enter your email" required></input>
+      </P>
+      <p>
+        <label for = "number" id ="number-label">Number:</label>
+      <input type = "number" id = "number" placeholder = "Enter your number" min = "1" max= "99" required></input>
+      </p>
+      <p>
+        <label>Which option best describes you?</label>
+        <select id = "dropdown">
+          <option value  = "">Select an option</option>
+          <option value="happy">I am happy with the service.</option>
+          <option value="dissapointed">I am dissapointed.</option>
+          <option value="angry">I am angry.</option>
+        </select>
+      </p>
+      <p>
+        <h3>How was the mattress?</h3>
+      </P>
+      <p>
+        <input type = "radio" id = "comfy" name = "mattress" value = "comfy" required>
+        <label for = "comfy">comfy</label>
+           <input type = "radio" id = " uncomfy" name = "mattress" value = "uncomfy" required>
+        <label for = "uncomfy">uncomfy</label>
+      </p>
+      <p>
+      <h3>  What did you enjoy most at The Olive Garden Guest House? </h3>
+      
+  <input type="checkbox" id="reading" name="hobbies" value="reading">
+  <label for="reading">Reading</label><br>
+
+  <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+  <label for="traveling">Traveling</label><br>
+
+  <input type="checkbox" id="sports" name="hobbies" value="sports">
+  <label for="sports">Sports</label><br>
+
+  <input type="checkbox" id="music" name="hobbies" value="music">
+  <label for="music">Music</label><br>
+      </p>
+      <p>
+         <label for="comments">Additional Comments:</label><br>
+  <textarea 
+    id="comments" 
+    name="comments" 
+    rows="4" 
+    cols="50" 
+    placeholder="Write your comments here...">
+  </textarea>
+
+  <button id = "submit" type="submit">Submit</button>
+      </p>
+
+    </form>
+
+  </div>
+
+</div>
+
+** end of index.html **
+
+** start of styles.css **
+
+
+
+** end of styles.css **
+
