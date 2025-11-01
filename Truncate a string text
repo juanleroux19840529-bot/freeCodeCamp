@@ -1,0 +1,13 @@
+** start of script.js **
+
+function truncateString(str, num){
+  if(str.length > num){
+    const truncateStr = str.slice(0,num);
+    return truncateStr + "...";
+  }else {
+      return str;
+  }
+}
+console.log(truncateString("Juan Le Roux", 4))
+
+** end of script.js **
