@@ -1,0 +1,68 @@
+** start of script.js **
+
+let questions = [
+  {
+  category: "Location",
+  question: "Where do you live?", 
+  choices: ["Vietnam", "USA", "South Africa"],
+  answer:"South Africa"    
+  },
+  {
+  category: "Sport",
+  question: "What is your favorite sport?",
+  choices: ["Rugby", "Soccer", "Chess"],
+  answer:"Chess"   
+  },
+  {
+  category: "Acedemic",
+  question: "What is your favorite subject?",
+  choices: ["Art", "Computer Science", "Maths"],
+  answer:"Computer Science"    
+  },
+  {
+  category: "Animals",
+  question: "Which animal do you like?", 
+  choices: ["Monkeys", "Cats", "Dogs"],
+  answer:"Monkeys"    
+  },
+  {
+    category: "Food",
+    question: "What is your favorite fruit?", 
+    choices: ["Burgers", "Noodles", "Cheese"],
+    answer:"Burgers"    
+  }
+];
+//takes an array of questions as a parameter and returns a random question object from the array.
+function getRandomQuestion(arrayOfQuestions){
+const randomIndex = Math.floor(Math.random()*arrayOfQuestions.length);
+console.log(randomIndex);  
+return arrayOfQuestions[randomIndex]
+}
+// takes the array of the available choices as a parameter, and returns a random answer to the selected question.
+function getRandomComputerChoice(choicesArray){
+ const randomIndex = Math.floor(Math.random() * choicesArray.length);
+ console.log(randomIndex); 
+  return choicesArray[randomIndex];
+}
+//takes the question object as the first parameter and the computer's choice as the second parameter. The function should return The computer's choice is correct! if the answer is correct.
+
+//Otherwise, it returns The computer's choice is wrong. The correct answer is: <correct-answer>, where <correct-answer> is the value of the correct answer to the chosen question.
+function getResults(questionObject, computerChoice) {
+  // Check if the computer’s choice matches the correct answer
+  if (computerChoice === questionObject.answer) {
+    return "The computer's choice is correct!";
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${questionObject.answer}`;
+  }
+
+} 
+const randomQuestion = getRandomQuestion(questions);
+console.log("Question:", randomQuestion.question);   
+
+const computerChoice = getRandomComputerChoice(randomQuestion.choices);
+console.log("Computer chose:", computerChoice);
+
+console.log(getResults(randomQuestion, computerChoice));
+
+** end of script.js **
+
