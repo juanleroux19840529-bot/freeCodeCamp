@@ -1,0 +1,27 @@
+** start of script.js **
+
+function findLongestWordLength(sentence){
+  sentence = sentence.toLowerCase()
+  console.log(sentence)
+
+  const seperatedSentenceIntoWordsArray= sentence.split(" ");
+
+  //console.log(seperatedSentenceIntoWordsArray);
+
+let longestWord = "";
+
+  for(let i = 0;  i < seperatedSentenceIntoWordsArray.length; i++){ const word = seperatedSentenceIntoWordsArray[i]
+  //console.log(word);
+
+if(word.length > longestWord.length){
+  longestWord = word;
+  
+}
+}
+return longestWord.length
+}
+
+let longestWord = findLongestWordLength("The quick brown fox jumped over the lazy dog")
+console.log(`The longest word is: ${longestWord}`)
+
+** end of script.js **
