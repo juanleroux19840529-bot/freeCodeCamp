@@ -1,0 +1,12 @@
+function countWords(sentence) {
+let wordCount = "";
+const arrayOfSentenceWords = sentence.split(" ");
+console.log(arrayOfSentenceWords)
+wordCount = arrayOfSentenceWords.length
+
+
+  return wordCount;
+}
+
+const numberOfWord = countWords("Hello world")
+console.log(numberOfWord)
