@@ -1,0 +1,33 @@
+function verify(message, key, signature) {
+ const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ const arrayOfAlphabet = alphabet.split("")
+
+//loop through the message and find the index of the each letter in the message within the Alphabet
+let totalAmountOfMessage = 0
+for(let letter of message.replace(/[^a-zA-Z]/g, "")){
+  const amountOfLetterInMessage = alphabet.indexOf(letter) +1 ;
+ // console.log(amountOfLetterInMessage);
+  totalAmountOfMessage += amountOfLetterInMessage
+  //console.log(totalAmountOfMessage)
+}
+let totalAmountOfKey = 0
+for (let letter of key.replace(/[^a-zA-Z]/g, "")){
+  const amountofletterInKey = alphabet.indexOf(letter)+1 
+  //console.log(amountofletterInKey)
+
+totalAmountOfKey += amountofletterInKey
+
+}
+ let answer;   
+ if ( totalAmountOfMessage+totalAmountOfKey === signature ){ 
+   answer = (true)
+ } else  {
+   answer = (false)
+ }
+
+  return answer
+}
+
+const inputVarFunc = verify("foo", "bar", 54)  
+
+console.log(inputVarFunc)
