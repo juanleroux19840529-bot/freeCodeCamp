@@ -1,0 +1,32 @@
+
+let result = "\n";
+function pyramid (char,rows,upsideDown){
+
+
+//loop throught the rows
+//if upsidedown false it should start at 1
+//if upsideDown true it should start amount of rows down to 1
+
+const start = upsideDown ? rows : 1 //starting row
+const end = upsideDown ? 0: rows +1 //ending condition
+const step = upsideDown ? -1: 1 //step direction
+
+//The loop that builds the pyramid
+for(let i = start; i !== end; i += step){
+  //step 3 Calculate how many characters to print in a row
+  const charCount = 2*i-1
+console.log(charCount)
+//calculate ho many spaces to add on the left for centering.
+  const spaces = rows - i;
+console.log(spaces)
+//Step 5 create the row using "" repeat(spaces) and char.repeat(character)
+const row = " ".repeat(spaces) + char.repeat(charCount)
+console.log(row)
+
+//step 6 Add the row in a new line to the result.
+result += row + "\n";
+}
+return result
+}
+ pyramid("o", 10, false)
+ console.log(result)
