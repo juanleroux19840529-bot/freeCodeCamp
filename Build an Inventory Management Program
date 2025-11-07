@@ -1,0 +1,55 @@
+let inventory =[];
+
+
+
+function findProductIndex(productName){
+let indexOfProduct = inventory.findIndex(item=>item.name.toLowerCase() === productName.toLowerCase());
+//console.log(indexOfProduct)
+return indexOfProduct;
+}
+//console.log(findProductIndex("Apple"))
+
+// Step 3: Define the addProduct() function
+function addProduct(productObject){
+ const name = productObject.name.toLowerCase();
+ const index = findProductIndex(name)
+ //console.log(index)
+// If the product already exists (index is not -1)
+ if (index!==-1){
+   // Add the new quantity to the existing quantity
+   inventory[index].quantity += productObject.quantity
+   // Log the updated name and quantity
+    console.log(`${name} quantity updated`);
+  } else {
+    inventory.push({name: name, quantity: productObject.quantity})
+    console.log(`${name} added to inventory`);
+ }
+}
+function removeProduct (productName, quantity){
+  // Find the index of the product in the inventory 
+  const name = productName.toLowerCase();
+  const index = findProductIndex(productName);
+
+  if (index === -1){
+    console.log(`${name} not found`);
+    return;
+  }
+  if(inventory[index].quantity < quantity){
+    console.log(`Not enough ${name} available, remaining pieces: ${inventory[index].quantity}`)
+    return;
+  }
+
+  inventory[index].quantity -= quantity;
+  
+if (inventory[index].quantity === 0) {
+    inventory.splice(index, 1);
+  } else {
+    console.log(
+      `Remaining ${name} pieces: ${inventory[index].quantity}`
+    );
+  }
+
+
+}
+
+addProduct({name: "FLOUR", quantity: 5}) 
