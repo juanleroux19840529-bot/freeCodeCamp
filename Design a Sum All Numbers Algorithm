@@ -1,0 +1,27 @@
+function sumAll(arrayOfTwoNumbers){
+let total=0;
+
+ //console.log(arrayOfTwoNumbers)
+ if (arrayOfTwoNumbers[0] > arrayOfTwoNumbers[1]){
+  let tempNum = arrayOfTwoNumbers[0]
+  console.log(arrayOfTwoNumbers)
+  arrayOfTwoNumbers[0]=arrayOfTwoNumbers[1]
+  console.log(arrayOfTwoNumbers)
+  arrayOfTwoNumbers[1] = tempNum
+ console.log(arrayOfTwoNumbers)
+ } //else console.log(arrayOfTwoNumbers)
+ 
+
+ let start = arrayOfTwoNumbers[0]
+ //console.log(start)
+ let end = arrayOfTwoNumbers[1]
+ //console.log(end)
+
+ for (let i = start; i <= end; i++){
+   total += i
+   //console.log(total)
+ }
+ return total 
+
+}
+console.log(sumAll([4, 1]))
