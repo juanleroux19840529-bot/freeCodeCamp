@@ -1,0 +1,23 @@
+function convertHTML(string){
+// creat object with 
+const htmlEntities = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&apos;"
+
+};
+let result = "";
+
+for (let character of string){
+if(htmlEntities[character]){
+  result += htmlEntities[character];
+}else result += character
+}
+return result//.replace(/&/g, "&amp;") 
+}
+
+console.log(convertHTML("Dolce & Gabbana"))
+console.log(convertHTML("Hamburgers < Pizza < Tacos"))
+console.log(convertHTML("Schindler's List"))
