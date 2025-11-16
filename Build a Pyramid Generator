@@ -1,0 +1,47 @@
+function pyramid (char,numRow,boolean){
+ 
+ let pyramid = "\n" 
+  
+if (boolean === true){
+  // a loop that interger references a row and uses numRow(a number) as its starting point
+for (let row = numRow; row >= 1; row--){
+    let charsInRow = 2 * row - 1;  
+  console.log(charsInRow)
+  let spaces = numRow - row;
+//console.log(spaces)
+  let line = " ".repeat(spaces) + char.repeat(charsInRow);
+  
+  pyramid += line;
+
+  if (row > 1) {             // If NOT the last row
+      pyramid += "\n";              // Add newline after row
+    } 
+  
+}
+
+
+} if (boolean===false){
+for (let row=1; row<= numRow; row++){
+  
+  let charsInRow = 2 * row - 1;  
+  
+  let spaces = numRow - row;
+
+  let line = " ".repeat(spaces) + char.repeat(charsInRow);
+  
+  pyramid += line;
+  if (row < numRow) {             // If NOT the last row
+      pyramid += "\n";              // Add newline after row 
+    }
+}
+
+
+
+    }
+
+ return pyramid +"\n"
+}
+
+console.log(pyramid("o", 4, false))
+console.log(pyramid("p", 5, true))
+console.log(pyramid("o", 4, false))
