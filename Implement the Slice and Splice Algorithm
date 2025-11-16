@@ -1,0 +1,27 @@
+function frankenSplice(arr1,arr2,index){
+
+/*let result = arr2.slice();
+
+result.splice(index,0,...arr1)
+
+
+return result*/
+
+/*let firstPart = arr2.slice(0,index);
+let secondPart = arr2.slice(index);
+
+let result = firstPart.concat(arr1).concat(secondPart)
+
+return result*/
+
+let result = arr2.slice() // create new independent array
+
+for (let i = 0; i < arr1.length; i++){ //loop through arr1 
+
+    result.splice(index + i,0, arr1[i]) //add items from array ! into the result/ arr2 copy with splice.
+
+}
+return result
+}
+
+console.log(frankenSplice([1, 2, 3], [4, 5], 1))
