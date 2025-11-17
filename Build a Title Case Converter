@@ -1,0 +1,12 @@
+function titleCase(str){
+let lowerCaseStr = str.toLowerCase();
+    lowerCaseStr = lowerCaseStr.split(" ");
+//console.log(lowerCaseStr)
+    const capitilised = lowerCaseStr.map(lowerCaseStr=>lowerCaseStr.charAt(0).toUpperCase()+lowerCaseStr.slice(1))
+  const sentence = capitilised.join(" ");
+
+  return sentence;
+}
+
+console.log(titleCase("I'm a little tea pot"));
+console.log(titleCase("I'm a little tea pot"));
