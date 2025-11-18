@@ -1,0 +1,79 @@
+// Example inventory array
+let inventory = [];
+
+inventory.push({name: "flour", quantity: 10});
+inventory.push({name: "salt", quantity: 10});
+inventory.push({name: "sugar", quantity: 10});
+inventory.push({name: "bread", quantity: 10});
+//console.log(inventory)
+// Function to find the index of a product by name (case-insensitive)
+
+function findProductIndex(productName){
+const lowerCaseName = productName.toLowerCase();
+
+for (let i = 0; i<inventory.length; i++){
+  if (inventory[i].name.toLowerCase()=== lowerCaseName){
+    return i
+  }
+
+}
+  return -1 
+}
+
+//console.log(findProductIndex("Flour"))
+console.log(findProductIndex("salt"))
+//console.log(findProductIndex("sugar"))
+//console.log(findProductIndex("bread"))
+
+// Function to add a product or update quantity if it exists
+ //see if the product exist if it does add to the quantity
+ //if you want to pass an oject into the parameter as an argument with two names (name) and (quantity) you have to use curly brackets to combine them as a single object
+
+function addProduct({name, quantity}){
+  const index = findProductIndex(name);
+    //console.log(index)
+  if (index !== -1) {  
+   inventory[index].quantity += quantity;
+   console.log(`${name.toLowerCase()} quantity updated`);
+
+ }else {
+   inventory.push({name: name.toLowerCase(), quantity})
+   console.log(`${name.toLowerCase()} added to inventory`)
+ }
+}
+
+addProduct({name: "FLOUR", quantity: 5})
+addProduct({name: "Canned peas", quantity: 5})
+
+function removeProduct(name,quantity){
+ const index = findProductIndex(name.toLowerCase());// always fin dthe index of the product name in lowercase.
+ //if the index does not exist then the return a message in the console.
+ if(index === -1){
+    console.log(`${name.toLowerCase()} not found`)
+    return;
+ }
+ const product = inventory[index];
+ // if not enough quantity
+ if(product.quantity < quantity){
+   console.log(`Not enough ${product.name} available, remaining pieces: ${product.quantity}`);
+    return;
+ }
+  // Subtract quantity
+  product.quantity -= quantity;
+
+  // If quantity becomes 0 → remove from inventory
+  // remember acces tiems in an object with dot notation...
+  // remember splice takes out an item from an array. second parameter defines how many items. 
+  // product is an object array....
+  
+  if (product.quantity === 0) {
+    inventory.splice(index, 1);
+    console.log(`${product.name} removed from inventory (0 pieces left)`);
+    return;
+}
+// Otherwise log remaining quantity
+  console.log(`Remaining ${product.name} pieces: ${product.quantity}`);
+}
+
+removeProduct("FLOUR", 15)
+console.log(inventory)
