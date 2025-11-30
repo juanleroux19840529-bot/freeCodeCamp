@@ -1,0 +1,10 @@
+function destroyer (arr, ...itemsToRemove){
+  
+   // filter out anything that exists in itemsToRemove
+  
+  return arr.filter(num=> !itemsToRemove.includes(num))
+
+}
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+console.log(destroyer( ["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan" ))
