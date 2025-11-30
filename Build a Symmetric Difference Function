@@ -1,0 +1,22 @@
+function diffArray (arr1, arr2){
+ // finds the duplicate in the second array and excludes them from the first arr
+ // items in arr1 that are NOT in arr2
+  const result1 = arr1.filter(item => !arr2.includes(item));
+
+  //const itemsInArray1 = result1
+    //console.log(itemsInArray1) 
+ 
+ // items in arr2 that are NOT in arr1
+  const result2 = arr2.filter(item=> !arr1.includes(item))
+  //const itemsInArray2 = result2
+    //console.log(itemsInArray2)
+
+
+return [...result1,...result2]
+}
+
+console.log (diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]))
+
+console.log (diffArray(["pen", "book"], ["book", "pencil", "notebook"]))   
+
+//console.log (diffArray([], [])) 
