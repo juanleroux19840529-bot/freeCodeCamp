@@ -1,0 +1,52 @@
+let books = [
+  {
+    title: "Jungle Book",
+    authorName: "Rudyard Kipling",
+    releaseYear: 1894
+  }
+  ,
+  {
+    title: "Wind in the Willows",
+    authorName: "Kenneth Grahame",
+    releaseYear: 1908
+  }
+  ,
+  {
+    title: "Mary Poppins",
+    authorName: "P. L. Travers",
+    releaseYear: 1934
+  }
+  ,
+  { 
+     title: "Harry Potter and the Philosopher's Stone", 
+     authorName: "J. K. Rowling", 
+     releaseYear: 1997
+  }
+  ,
+  { 
+    title: "To Kill a Mockingbird", 
+    authorName: "Harper Lee", 
+    releaseYear: 1960 }
+]
+
+//create the call back function for sorting the release year.
+
+function sortByYear(book1, book2){
+ if (book1.releaseYear < book2.releaseYear){
+   return -1
+ }else if (book1.releaseYear > book2.releaseYear){
+   return 1
+ }else {
+   return 0
+ }
+}
+// filter out the books released after 1950
+
+const filteredBooks = books.filter((book)=>book.releaseYear <= 1950);
+
+// sort ther filtered books by the year they where published in.
+
+
+filteredBooks.sort(sortByYear)
+
+console.log(filteredBooks)
