@@ -1,0 +1,10 @@
+function whatIsInAName(arrObj,sourceObj){
+  
+ return arrObj.filter(person => {
+// Check if every property in sourceObj exists and matches in person
+  return Object.keys(sourceObj).every(key => person[key] === sourceObj[key]);
+
+ });
+}
+
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }))
