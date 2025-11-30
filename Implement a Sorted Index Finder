@@ -1,0 +1,12 @@
+function getIndexToIns(arr, num1){
+  
+  arr.push(num1)
+  arr.sort((a,b)=> a-b);
+  const indexOfNum = arr.findIndex(num => num === num1)
+   
+  
+  
+  return indexOfNum
+}
+
+console.log(getIndexToIns([5, 1, 2, 3, 4], 1.5))
