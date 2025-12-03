@@ -1,0 +1,30 @@
+function smallestCommons(arr){
+// Sort the numbers so we always start from the smaller
+const [min,max] = arr.sort((a,b)=> a-b);
+// Build an array of all numbers in the range (inclusive)
+const allNumbersInclusive = [];
+ for (let i = min; i <= max; i++ ){
+   allNumbersInclusive.push(i);
+   //console.log(allNumbersInclusive) 
+ }
+// step 3: GCD helper uses Eucludian algorithm
+function gcd(a,b){
+  return b === 0 ? a: gcd(b,a%b);
+}
+
+//Step 4: lcm helper using GCD(general common devider)
+function lcm(a,b){
+  return( a*b)/gcd(a,b);
+
+}
+//Step 5: Use the reduce function to  combine LCM accross the entire range.
+
+return allNumbersInclusive.reduce((currentLCM,num)=>{
+  return lcm(currentLCM,num)
+});
+
+}
+
+console.log(smallestCommons([1, 5]));
+
+console.log(smallestCommons([5, 1]));
