@@ -1,0 +1,14 @@
+function truthCheck(collection, pre) {
+
+ 
+  //every() method checks each object array
+  //obj => obj[prop] gets the property value if it's truthy it passes
+  //.every( returns true if all the objects pass, otherwise false) 
+  
+  return collection.every(obj=>obj[pre]);
+}
+
+
+
+
+console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot"));
