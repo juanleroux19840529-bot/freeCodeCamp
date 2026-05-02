@@ -1,0 +1,19 @@
+function fearNotLetter(string){
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+// find where the index start within the alphabet
+let startIndex = alphabet.indexOf(string[0]);
+//console.log(startIndex)
+ // Compare each letter in str with the alphabet loop through each letter in the string and compare it to the aphabet. if a letter is not in the aphabet then return that letter.
+ for (let i = 0; i < string.length; i++){
+  if (string[i] !== alphabet[startIndex + i]){
+    // Found a mismatch → return the missing letter
+    return alphabet[startIndex+i]
+  }
+ }
+ //If no miss match is found return undefined
+ return undefined
+} 
+
+//console.log(fearNotLetter("bcde"));
+console.log(fearNotLetter("abcdefghjklmno"))
+console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"))
